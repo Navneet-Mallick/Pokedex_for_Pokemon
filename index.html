@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="pokeball-icon"></div>
+      <h1>Pokédex Explorer</h1>
+    </div>
+    <p class="tagline">Search · Filter · Discover</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchName" placeholder="Search any Pokémon by name..." />
+      </div>
+
+      <div class="filter-row">
+        <select id="sortBy">
+          <option value="id">Sort: ID</option>
+          <option value="name">Sort: Name</option>
+          <option value="hp">Sort: HP ↓</option>
+          <option value="height">Sort: Height ↓</option>
+          <option value="weight">Sort: Weight ↓</option>
+        </select>
+        <select id="filterHeight">
+          <option value="">Any Height</option>
+          <option value="small">Small (under 0.5m)</option>
+          <option value="medium">Medium (0.5–1m)</option>
+          <option value="large">Large (over 1m)</option>
+        </select>
+        <button class="reset-btn" id="resetBtn">✕ Reset</button>
+      </div>
+
+      <div class="type-pills" id="typePills"></div>
+    </div>
+
+    <div class="status-bar">
+      <p id="countText">Loading Pokémon...</p>
+      <div class="loading-bar">
+        <div class="loading-fill" id="loadingFill"></div>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-header">
+        <img class="modal-img" id="modalImg" src="" alt="" />
+        <div class="modal-header-info">
+          <div class="modal-id" id="modalId"></div>
+          <div class="modal-title" id="modalName"></div>
+          <div class="types" id="modalTypes"></div>
+        </div>
+      </div>
+      <div class="modal-stats" id="modalStats"></div>
+      <div class="stat-bar-row" id="statBars"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
