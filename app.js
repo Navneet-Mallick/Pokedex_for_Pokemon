@@ -26,7 +26,7 @@ const TYPE_COLORS = {
 };
 
 const TOTAL = 150;
-const DEFAULT_SHOW = 5;
+const DEFAULT_SHOW = 30;
 
 let allPokemon = [];
 let activeType = '';
